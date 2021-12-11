@@ -1,0 +1,5 @@
+Design choices:
+
+I created an abstract Shape class which my Cube, Cylinder, Cone and Sphere classes extend. This Shape class stores member variables for the shape parameters and the previous tessellation data and has the virtual method tessellate. Each of Cube, Cylinder, Cone and Sphere implement tessellate. Fo whichever object is showing on the canvas, this tessellate method is called every time the settings change. In tessellate, the objects first check if they should recompute vertices (by checking if a previous tesselation exists and if the parameters have changed meaningfully), and if necessary, recompute vertices. Each shape contains some set of faces, which are themselves classes, (Cube has 6 Rectangles, Cylinder has 2 Circles, Cone has 2 Circles, Sphere has some number of latitude Circles). Each of these face classes contain methods to output a list of Triangles, another class. This Triangle class contains a method to add itself to the output list (m_vertexData).
+
+No known bugs.
